@@ -8,7 +8,7 @@ public abstract class AbstractHttpClient {
     protected final HttpClient httpClient;
 
     public AbstractHttpClient() {
-        var loopResources = LoopResources.create("vins", 1, true);
+        var loopResources = LoopResources.create("mfa", 1, true);
         this.httpClient = HttpClient.create().runOn(loopResources).baseUrl(BASE_URL);
     }
 }
