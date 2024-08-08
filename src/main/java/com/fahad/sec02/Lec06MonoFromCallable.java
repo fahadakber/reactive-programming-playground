@@ -15,7 +15,7 @@ public class Lec06MonoFromCallable {
         var list = List.of(1,2,3);
 
         Mono.fromCallable(()->sum(list))   // diff between supplier and callable. they both are functional interfaces in
-                                            // java. the su[[lier will not throw exception (check exception) but can throw runtime exception
+                                            // java. the supplier will not throw exception (check exception) but can throw runtime exception
                                             // the callable can throw exception as part of its method signature
                 .subscribe(Util.subscriber());
     }

@@ -11,8 +11,7 @@ public class Lec03MonoSubscribe {
 
         var mono = Mono.just(1)
                 .map(i-> i + "a");
-                //.map(i->i / 0);
-
+                //.map(i->i / 0); // if this line is uncomment, then we'll get an error
 
 
         mono.subscribe(
