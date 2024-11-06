@@ -14,7 +14,7 @@ public class Lec05MonoFromSupplier {
     public static void main(String[] args) {
         var list = List.of(1,2,3);
         //Mono.just(sum(list))
-        Mono.fromSupplier(()->sum(list))
+        Mono.fromSupplier(()->sum(list))    // to delay the compute intensive operation, then we can use 'fromSupplier()'
                 .subscribe(Util.subscriber());
     }
 

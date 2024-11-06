@@ -40,7 +40,6 @@ public class Lec04VirtualThreads {
 
 
         Thread.ofPlatform().start(runnable1);
-
         Util.sleepSeconds(2);
     }
 }
