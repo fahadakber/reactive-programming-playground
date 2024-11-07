@@ -9,6 +9,16 @@ import reactor.core.scheduler.Schedulers;
 public class Lec02SubscribeOn {
     private static final Logger log = LoggerFactory.getLogger(Lec02SubscribeOn.class);
 
+    // Schedulers (Thread pool) in project reactor library
+    // boundedElastic - for Network / time-consuming / blocking operations
+    // parallel - CPU intensive tasks
+    // single - A single dedicated thread for one-off tasks
+    // immediate - current thread
+
+    // operators for schedulers
+    // 1. subscribeOn - for up stream
+    // 2. publishOn for downStream
+
     public static void main(String[] args) {
 
         var flux = Flux.create(sink -> {

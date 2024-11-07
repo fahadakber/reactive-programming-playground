@@ -19,10 +19,13 @@ public class Lec03MultipleSubscribeOn {
                     }
                     sink.complete();
                 })
-                // we can have multiple subscribeon(), but the one which is closest to producer (in this case 'subscribeOn(Schedulers.newParallel("fahad"))')
-                // will take priority , other SubscribeOn() will delgate the work to the closest SubscribeOn, which will do all the work
+                // we can have multiple subscribeon(), but the one which is closest to
+                // producer (in this case 'subscribeOn(Schedulers.newParallel("fahad"))') will take priority,
+                // other SubscribeOn() will delgate the work to the closest SubscribeOn, which will do all the work
 
                 .subscribeOn(Schedulers.newParallel("fahad"))
+                // if you dont want to change the scehduler (like in this case boundedElastic), mentioning 'Schedulers.immdeiate()'
+                // will allow the exisiting thread to continue working on exiting task
                 //.subscribeOn(Schedulers.immediate())
                 .doOnNext((v -> log.info("value: {}", v)))
                 .doFirst(() -> log.info("first1"))
