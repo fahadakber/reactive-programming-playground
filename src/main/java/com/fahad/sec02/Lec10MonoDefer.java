@@ -13,7 +13,7 @@ public class Lec10MonoDefer {
 
     public static void main(String[] args) {
 
-        Mono.defer(Lec10MonoDefer::createPublisher)
+        Mono.defer(Lec10MonoDefer::createPublisher) // Mono.defer, will delay publisher creation
                 .subscribe(Util.subscriber());
     }
 

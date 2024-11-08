@@ -10,7 +10,7 @@ public class Lec04MonoEmptyError {
         /*getUsername(3)
                 .subscribe(
                        s-> System.out.println(s),
-                        err->{}
+                        err->{} // error handler, if not provided then reactor library will throw a dropped error
                 );*/
     }
 
