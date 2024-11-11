@@ -40,4 +40,12 @@ public class Util {
         mono.subscribe(subscriber("sub1"));
         mono.subscribe(subscriber("sub2"));
     }*/
+    public static void sleep(Duration duration){
+        try {
+            Thread.sleep(duration);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
